@@ -1,0 +1,90 @@
+<Post>
+    orientation: 'vertical'
+    size_hint_y: None
+    height: "520dp"
+    spacing: 10
+
+    MDBoxLayout:
+        padding: "5dp"
+        adaptive_height: True
+
+        TwoLineAvatarIconListItem:
+            text: root.name
+            secondary_text: root.updated_ago
+            divider: None
+            _no_ripple_effect: True
+
+            ImageLeftWidget:
+                source: root.avatar
+                radius: [20, ]
+
+        MDIconButton:
+            icon: "dots-horizontal"
+
+    MDBoxLayout:
+        adaptive_height: True
+        height: 10
+        padding: 10, 0, 0, 0
+
+        MDLabel:
+            text: root.caption
+            adaptive_height: True
+
+    FitImage:
+        adaptive_height: True
+        source: root.post
+
+    MDBoxLayout:
+        adaptive_height: True
+        padding: 5
+        spacing: 1
+
+        # Reactions
+        Reactions:
+            source: "assets/images/facebook-reactions/like.png"
+        Reactions:
+            source: "assets/images/facebook-reactions/love.png"
+        Reactions:
+            source: "assets/images/facebook-reactions/care.png"
+
+        MDLabel:
+            text: root.likes
+            font_size: 13
+
+        Widget:
+
+        MDLabel:
+            text: f"{root.comments} comments"
+            font_size: 13
+            shorten: True
+
+    # Like, Comment, Share buttons
+    MDBoxLayout:
+        adaptive_height: True
+        padding: 7
+
+        ReactionButtons:
+            icon: "thumb-up-outline"
+            text: "Like"
+        Widget:
+        ReactionButtons:
+            icon: "comment-outline"
+            text: "Comment"
+        Widget:
+        ReactionButtons:
+            icon: "share-outline"
+            text: "Share"
+
+
+
+<ReactionButtons@MDRectangleFlatIconButton>:
+    theme_text_color: "Custom"
+    text_color: 0, 0, 0, 1
+    line_color: 1, 1, 1, 1
+    icon_color: 0, 0, 0, 1
+
+
+<Reactions@FitImage>:
+    size_hint: None, None
+    size: 15, 15
+    radius: [10, ]

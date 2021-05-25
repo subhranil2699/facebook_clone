@@ -1,0 +1,197 @@
+#:import get_color_from_hex kivy.utils.get_color_from_hex
+#:import AvatarImage components.avatar_image.AvatarImage
+#:import ThreeButtons components.three_buttons.ThreeButtons
+
+
+<HomePage>
+
+    # App background color
+    md_bg_color: 1, 1, 1, 1
+
+    MDBoxLayout:
+        orientation: 'vertical'
+
+        # Appbar
+        MDToolbar:
+            md_bg_color: 1, 1, 1, 1     # White
+            title: 'facebook'
+            specific_text_color: get_color_from_hex("#1777F2")
+            right_action_items: [["magnify"], ["facebook-messenger"]]
+
+        # Tab Icons
+        MDBoxLayout:
+            adaptive_size: True
+            height: 30
+            spacing: 25
+
+            MDIconButton:
+                icon: "home"
+            MDIconButton:
+                icon: "account-circle-outline"
+            MDIconButton:
+                icon: "account-group-outline"
+            MDIconButton:
+                icon: "bell-outline"
+            MDIconButton:
+                icon: "menu"
+
+        MDBoxLayout:
+
+            ScrollView:
+                bar_width: 0
+
+                MDBoxLayout:
+                    adaptive_height: True
+
+                    MDBoxLayout:
+                        adaptive_height: True
+                        orientation: 'vertical'
+                        id: timeline
+
+                        MDSeparator:
+
+                        # Profile picture and update status button
+                        MDBoxLayout:
+                            orientation: "horizontal"
+                            padding: 10
+                            spacing: 20
+                            adaptive_height: True
+                            height: 100
+
+                            # Profile Picture
+                            AvatarImage:
+                                source: root.profile_pic
+
+                            # Update Status Button
+                            MDRoundFlatButton:
+                                text: "Write something here...\nWrite something here..."
+                                size_hint: 1, 1
+                                line_color: 0, 0, 0, 1
+                                text_color: 0, 0, 0, 1
+
+                        MDSeparator:
+
+                        # Three buttons: Live, Photo and Reels
+                        MDBoxLayout:
+                            adaptive_height: True
+                            height: 40
+                            padding: 5
+                            spacing: 10
+
+                            # Live button
+                            ThreeButtons:
+                                text: "Live"
+                                icon: "video"
+                                icon_color: get_color_from_hex('#F2413D')       # Red
+
+                            MDSeparator:
+                                size_hint_x: None
+                                width: 1
+                                height: 40
+
+                            # Photo Button
+                            ThreeButtons:
+                                text: "Photo"
+                                icon: "image-multiple"
+                                icon_color: get_color_from_hex('#86BE49')       # Green
+
+                            MDSeparator:
+                                size_hint_x: None
+                                width: 1
+                                height: 40
+
+                            # Reels button
+                            ThreeButtons:
+                                text: "Reels"
+                                icon: "movie-play"
+                                icon_color: get_color_from_hex('#00A4F5')       # Blue
+
+                        MDSeparator:
+                            size_hint_y: None
+                            height: 12
+
+                        # List of all online friends
+                        ScrollView:
+                            size_hint_y: None
+                            height: 70
+                            bar_width: 0
+
+                            MDBoxLayout:
+                                adaptive_width: True
+                                spacing: 10
+                                padding: 10
+
+                                MDRoundFlatIconButton:
+                                    text: "Create\nRoom"
+                                    icon: "video-plus"
+                                    pos_hint: {'center_x': 0.5, 'center_y': 0.5}
+
+                                # List of all online friends' images
+                                MDBoxLayout:
+                                    adaptive_width: True
+                                    id: online_friends
+                                    padding: 10
+                                    spacing: 10
+
+                        MDSeparator:
+                            size_hint_y: None
+                            height: 12
+
+                        MDBoxLayout:
+                            adaptive_height: True
+                            padding: 10
+                            height: 200
+
+                            ScrollView:
+                                size_hint_y: None
+                                height: "190dp"
+                                bar_width: 0
+
+                                MDBoxLayout:
+                                    adaptive_width: True
+                                    spacing: 100
+
+                                    # Create Story Widget
+                                    MDRelativeLayout:
+                                        md_bg_color: 1, 1, 1, 1
+                                        size_hint_y: None
+                                        size: "110dp", "190dp"
+
+                                        MDRelativeLayout:
+                                            md_bg_color: get_color_from_hex("#EBEBEB")
+                                            radius: 15
+                                            pos_hint: {'top': 1, 'left': 1}
+                                            size_hint: None, None
+                                            size: "100dp", "190dp"
+
+                                            FitImage:
+                                                source: root.profile_pic
+                                                radius: [15, 15, 0, 0]
+                                                mipmap: True
+                                                size_hint: None, None
+                                                size: "100dp", "120dp"
+                                                pos_hint: {"top": 1, "left": 1}
+
+                                            FitImage:
+                                                source: "assets/images/plus.png"
+                                                pos_hint: {'center_x': 0.5, 'center_y': 0.35}
+                                                size_hint: None, None
+                                                size: 40, 40
+
+                                            MDLabel:
+                                                text: "Create Story"
+                                                theme_text_color: "Custom"
+                                                text_color: 0, 0, 0, 1
+                                                halign: 'center'
+                                                font_size: 14
+                                                pos_hint: {'center_x': 0.5, 'center_y': 0.1}
+                                                adaptive_height: True
+
+                                    # Friends' Stories
+                                    MDBoxLayout:
+                                        adaptive_width: True
+                                        id: stories
+
+                        MDSeparator:
+                            size_hint_y: None
+                            height: 12

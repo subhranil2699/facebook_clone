@@ -1,0 +1,26 @@
+{
+  "Harry Potter": {
+    "avatar": "https://images.unsplash.com/photo-1621786514880-6e8996eb7b22?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=334&q=80",
+    "post": "https://images.unsplash.com/photo-1621786514880-6e8996eb7b22?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=334&q=80",
+    "likes": "105",
+    "comments": "21",
+    "caption": "Chill",
+    "updated_ago": "2 h"
+  },
+  "Albert Einstein": {
+    "avatar": "https://images.unsplash.com/photo-1611095968462-3dc56b14454a?ixid=MnwxMjA3fDF8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=751&q=80",
+    "post": "https://images.unsplash.com/photo-1621788094300-577b5aa8b8bd?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=400&q=80",
+    "likes": "70",
+    "comments": "1",
+    "caption": "Yo!!!",
+    "updated_ago": "2 h"
+  },
+  "Ninja Hattori": {
+    "avatar": "https://images.unsplash.com/photo-1621786574887-a268ccd4604c?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=334&q=80",
+    "post": "https://images.unsplash.com/photo-1621792907526-e69888069079?ixid=MnwxMjA3fDB8MHxlZGl0b3JpYWwtZmVlZHwzM3x8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=60",
+    "likes": "55",
+    "comments": "105",
+    "caption": "Caption",
+    "updated_ago": "45 m"
+  }
+}

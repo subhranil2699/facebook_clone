@@ -1,0 +1,37 @@
+<StoryWidget>
+    size_hint: None, None
+    size: "110dp", "190dp"
+    md_bg_color: 1, 1, 1, 1
+
+    MDCard:
+        pos_hint: {'center_x': 0.5, 'center_y': 0.5}
+        id: card
+        size_hint: None, None
+        size: "100dp", "190dp"
+        radius: 15
+
+        FitImage:
+            source: root.image
+            radius: [15, ]
+            mipmap: True
+
+    MDCard:
+        size_hint: None, None
+        size: "30dp", "30dp"
+        radius: 15
+        x: 10
+        y: card.height - self.height * 1.2
+        elevation: 18
+
+        FitImage:
+            source: root.avatar
+            radius: [27, ]
+            mipmap: True
+
+    MDLabel:
+        halign: 'center'
+        pos_hint: {'center_x': 0.5, 'center_y': 0.1}
+        text: root.name
+        theme_text_color: "Custom"
+        text_color: 1, 1, 1, 1
+        font_size: 10
